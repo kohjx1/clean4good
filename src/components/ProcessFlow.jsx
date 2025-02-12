@@ -1,14 +1,10 @@
 import { useCallback, useState, useLayoutEffect } from 'react';
 import ReactFlow, {
   Background,
-  Controls,
-  MiniMap,
   useNodesState,
   useEdgesState,
-  addEdge,
   Position,
 } from 'reactflow';
-import 'reactflow/dist/base.css';
 import 'reactflow/dist/style.css';
 
 const nodeDefaults = {
@@ -118,12 +114,11 @@ const ProcessFlow = () => {
   ];
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useNodesState(initialEdges);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  const onConnect = useCallback(
-    (params) => setEdges((eds) => addEdge({ ...params, animated: true, style: { stroke: '#0ea5e9', strokeWidth: 2 } }, eds)),
-    [setEdges]
-  );
+  const onInit = useCallback((reactFlowInstance) => {
+    reactFlowInstance.fitView();
+  }, []);
 
   return (
     <div style={{ height: isSmallScreen ? '600px' : '600px' }}>
@@ -132,23 +127,21 @@ const ProcessFlow = () => {
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
+        onInit={onInit}
         fitView
-        attributionPosition="bottom-right"
-        className="dark:text-gray-100"
+        className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden"
+        minZoom={1}
+        maxZoom={1}
+        nodesDraggable={false}
+        nodesConnectable={false}
+        elementsSelectable={false}
+        panOnScroll={false}
+        panOnDrag={false}
+        zoomOnScroll={false}
+        zoomOnPinch={false}
+        zoomOnDoubleClick={false}
       >
-        <Background 
-          gap={12} 
-          size={1} 
-          color="currentColor" 
-          className="opacity-5"
-        />
-        <Controls className="bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600" />
-        <MiniMap 
-          className="bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600"
-          nodeColor="currentColor"
-          maskColor="rgb(255, 255, 255, 0.5)"
-        />
+        <Background />
       </ReactFlow>
     </div>
   );

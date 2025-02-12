@@ -33,8 +33,9 @@
   }
 
   .modern-card {
-    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl
-           transform transition-all duration-300 hover:-translate-y-1
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm
+           rounded-lg sm:rounded-xl shadow-sm hover:shadow-md
+           transition-shadow duration-200
            border border-gray-100 dark:border-gray-700;
   }
 
@@ -61,13 +62,16 @@
 
   .primary-button {
     @apply inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3
-           text-sm sm:text-base font-medium text-white
-           bg-gradient-to-r from-primary-600 to-primary-500
-           hover:from-primary-700 hover:to-primary-600
-           rounded-lg shadow-md hover:shadow-lg
-           transform transition-all duration-200
-           hover:-translate-y-0.5 focus:outline-none
-           focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+           border border-transparent text-xs sm:text-sm font-medium rounded-lg sm:rounded-xl
+           text-white bg-primary-600 hover:bg-primary-700
+           dark:bg-primary-500 dark:hover:bg-primary-600
+           transition-colors duration-200;
+  }
+
+  .hero-pattern {
+    @apply bg-gradient-to-br from-primary-50 to-primary-100
+           dark:from-primary-900/20 dark:to-primary-800/20
+           backdrop-blur-sm;
   }
 }
 
