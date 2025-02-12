@@ -76,7 +76,7 @@ function Home() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
             Welcome to Clean4Good
           </h1>
-          <p className="mt-4 sm:mt-6 max-w-md mx-auto text-sm sm:text-base md:text-lg text-gray-800 dark:text-white/90 font-medium">
+          <p className="mt-4 sm:mt-6 max-w-md mx-auto text-sm sm:text-base md:text-lg text-gray-800  font-medium">
             Supporting those with <span className="font-bold text-primary-600 dark:text-primary-400">physical</span>, <span className="font-bold text-primary-600 dark:text-primary-400">mental</span>, or <span className="font-bold text-primary-600 dark:text-primary-400">financial</span> challenges in maintaining a clean living environment.
           </p>
           <div className="mt-6 sm:mt-8 max-w-md mx-auto sm:flex sm:justify-center md:mt-10">
