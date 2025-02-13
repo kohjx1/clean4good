@@ -96,14 +96,16 @@ function Home() {
           <p className="mt-3 sm:mt-4 max-w-md mx-auto text-sm sm:text-base md:text-lg text-gray-800 font-medium">
             Supporting those with <span className="font-bold text-primary-600 dark:text-primary-400">physical</span>, <span className="font-bold text-primary-600 dark:text-primary-400">mental</span>, or <span className="font-bold text-primary-600 dark:text-primary-400">financial</span> challenges in maintaining a clean living environment.
           </p>
-          <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/process" className="primary-button w-full sm:w-auto text-center inline-flex items-center justify-center">
+          <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4 sm:px-0">
+            <Link to="/process" className="w-full sm:w-auto primary-button text-center inline-flex items-center justify-center">
               Learn More
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </Link>
-            <PWAInstallButton />
+            <div className="w-full sm:w-auto">
+              <PWAInstallButton />
+            </div>
           </div>
         </div>
       </div>

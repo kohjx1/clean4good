@@ -36,24 +36,23 @@ export default function PWAInstallButton() {
   if (!isInstallable) return null;
 
   return (
-    <div className="relative inline-block">
-      {/* Desktop and Mobile version combined */}
+    <div className="relative w-full">
       <button
         onClick={handleInstallClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 
+        className="w-full inline-flex items-center justify-center px-6 py-3 
                  border border-transparent text-base font-medium rounded-full
                  text-primary-600 bg-white/90 hover:bg-white
                  dark:bg-gray-800/90 dark:hover:bg-gray-800 dark:text-primary-400
                  shadow-lg hover:shadow-xl
                  backdrop-blur-sm
-                 transform transition-all duration-200 hover:scale-105
+                 transform transition-all duration-200 hover:scale-105 active:scale-95
                  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
         aria-label="Install App"
       >
         <svg
-          className="h-5 w-5 sm:h-6 sm:w-6 mr-2"
+          className="h-5 w-5 mr-2 flex-shrink-0"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -66,17 +65,17 @@ export default function PWAInstallButton() {
             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
           />
         </svg>
-        <span className="whitespace-nowrap">Install App</span>
+        <span className="whitespace-nowrap">Get the App</span>
       </button>
 
-      {/* Tooltip */}
+      {/* Tooltip - only show on desktop */}
       <div
-        className={`absolute -top-12 left-1/2 transform -translate-x-1/2 px-3 py-2
+        className={`hidden sm:block absolute -top-12 left-1/2 transform -translate-x-1/2 px-3 py-2
                    bg-gray-900 dark:bg-gray-700 text-white text-sm rounded-lg whitespace-nowrap
                    transition-opacity duration-200 pointer-events-none
                    ${isHovered ? 'opacity-100' : 'opacity-0'}`}
       >
-        Get the app on your device
+        Install Clean4Good on your device
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1">
           <div className="border-8 border-transparent border-t-gray-900 dark:border-t-gray-700"></div>
         </div>
