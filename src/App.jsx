@@ -4,6 +4,7 @@ import ThemeToggle from './components/ThemeToggle';
 import ProcessFlow from './components/ProcessFlow';
 import FAQ from './components/FAQ';
 import Register from './components/Register';
+import PWAInstallButton from './components/PWAInstallButton';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,11 +29,11 @@ function App() {
                     Get Started
                   </Link>
                 </div>
-                <div className="ml-4 sm:ml-8 flex items-center">
+                <div className="ml-4 sm:ml-8 flex items-center space-x-4">
                   <ThemeToggle />
                   <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="ml-4 sm:hidden p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+                    className="ml-4 sm:hidden p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -95,13 +96,14 @@ function Home() {
           <p className="mt-3 sm:mt-4 max-w-md mx-auto text-sm sm:text-base md:text-lg text-gray-800 font-medium">
             Supporting those with <span className="font-bold text-primary-600 dark:text-primary-400">physical</span>, <span className="font-bold text-primary-600 dark:text-primary-400">mental</span>, or <span className="font-bold text-primary-600 dark:text-primary-400">financial</span> challenges in maintaining a clean living environment.
           </p>
-          <div className="mt-4 sm:mt-6 max-w-md mx-auto">
-            <Link to="/process" className="primary-button w-full sm:w-auto text-center">
+          <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to="/process" className="primary-button w-full sm:w-auto text-center inline-flex items-center justify-center">
               Learn More
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </Link>
+            <PWAInstallButton />
           </div>
         </div>
       </div>
